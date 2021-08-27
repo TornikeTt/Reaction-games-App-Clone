@@ -1,0 +1,50 @@
+main { 
+    width: $main_width;
+    background-color: rgb(220,220,220);
+
+    header { 
+        width: 90%;
+        height: 50px;
+        margin: 0px auto;
+        @include flex(row, space-between, center);
+        
+        p { 
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .icone { 
+            cursor: pointer;
+        }
+    }
+
+    .shape { 
+        width: 90%;
+        height: 90%;
+        overflow: auto;
+        transition: all 1s;
+        margin: 0px auto;
+        
+        &::-webkit-scrollbar {
+          width: 18px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: darkgrey;
+          border-radius: 20px;
+          border: 6px solid transparent;
+          background-clip: content-box;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: #a8bbbf;
+        }
+    }
+
+}
+

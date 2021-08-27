@@ -1,0 +1,69 @@
+.Share_App { 
+    margin: 20px auto;
+    border: 3px solid black;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover { 
+        background-color: rgb(255,255,255, 0.5);
+    }
+    
+    h1 { 
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+.Change_Theam { 
+    margin: 20px auto;
+    border: 3px solid black;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover { 
+        background-color: rgb(255,255,255, 0.5);
+    }
+
+    p { 
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+.Repretitions { 
+    margin: 20px auto;
+    border: 3px solid black;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover { 
+        background-color: rgb(255,255,255, 0.5);
+    }
+
+    & > p { 
+        font-weight: bold;
+        font-size: 25px;
+    } 
+
+   .difficulty { 
+       width: 50%;
+       margin: 20px auto;
+       @include flex(row , space-between, none);
+
+       p { 
+            font-weight: bold;
+            font-size: 25px;
+       } 
+
+       img { 
+           cursor: pointer;
+       }
+
+   }
+
+}
+
+
