@@ -1,0 +1,28 @@
+.ColorChange_Game { 
+    height: 90%;
+    margin-top: 20px;
+
+    .HowToPlye { 
+        padding: 15px;
+        border: 3px solid black;
+
+        p {
+            margin: 0 auto;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    .start_game { 
+        height: 90%;
+        margin-top: 20px;
+        border: 3px solid black;
+        @include flex(row, center, center);
+        cursor: pointer;
+        p { 
+            font-weight: bold;
+            font-size: 55px;
+            text-transform: uppercase;
+        }
+    }
+}

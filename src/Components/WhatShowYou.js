@@ -15,7 +15,7 @@ const WhatShowYou = (props) => {
        setGameIdentification,
     } = props
 
-    if( GameIdentification == 0 ) { 
+    if( GameIdentification === 0 ) { 
         if(settingToggle) { 
             return ( 
                 <Settings 

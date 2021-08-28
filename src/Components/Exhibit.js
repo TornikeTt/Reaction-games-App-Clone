@@ -15,12 +15,10 @@ const Exhibit = () => {
 
     const Setting_Hendler = () => { 
         setSettingToggle(!settingToggle);
-        if( GameIdentification > 0) { 
-            setGameIdentification(0)    
-        }
     }
 
     const Header_Name_Hendler = () => { 
+
         if ( settingToggle === true && GameIdentification === 0) { 
             return "SETTINGS"
         } else if ( settingToggle === false && GameIdentification === 0 ) { 
@@ -28,7 +26,7 @@ const Exhibit = () => {
         } else if ( GameIdentification > 0) { 
 
             switch(GameIdentification) { 
-                case 1: 
+                case 1:
                     return "COLOR CHANGE"
                     break;
                 case 2: 
@@ -43,8 +41,35 @@ const Exhibit = () => {
                 default: 
                     return "COMING SOON..."
             };
-
         }
+
+    }
+
+
+    const left_icone_hendler = () => { 
+
+        if( GameIdentification > 0 ) { 
+            // if we click any game
+            return "icones/times-solid.svg"
+        }
+
+        if( settingToggle ) { 
+            //inside setting 
+            return "icones/times-solid.svg"
+        } else if( settingToggle === false ) { 
+            //inside Menu
+            if( volume ) { 
+                return "icones/volume-up-solid.svg" 
+            } else { 
+                return  "icones/volume-mute-solid.svg"
+            }
+        }
+
+    }
+
+    const x = () => { 
+        // when we be in a game and click X icone it's go back to the menu
+        setGameIdentification(0)        
     }
     
 
@@ -53,27 +78,29 @@ const Exhibit = () => {
             <header>
                 <img
                     src = {
-                        settingToggle ? 
-                            "icones/times-solid.svg"
-                            :
-                        volume ? 
-                            "icones/volume-up-solid.svg" :
-                            "icones/volume-mute-solid.svg"
+                        left_icone_hendler()
                     }
                     alt="Speakers icone" 
                     className="icone"
                     onClick = { 
+                        GameIdentification > 0 ? x :
                         settingToggle ? Setting_Hendler : Volume_Hendler 
                     }
                 />
 
                 <p> { Header_Name_Hendler() } </p>
+                { /* show only then when user click one of them games */ }
+                { GameIdentification > 0 && <p> 1  / {difficultyValue} </p> }
 
+                { /*  here onClick string has string which
+                    gave us error change another time  */ }
                 <img 
-                    src="icones/cog-solid.svg" 
+                    src={ GameIdentification > 0 ? 
+                            "icones/sync-alt-solid.svg" :
+                            "icones/cog-solid.svg" }
                     alt="settings icone"
                     className="icone"
-                    onClick = { Setting_Hendler }
+                    onClick = { GameIdentification > 0 ? "us" : Setting_Hendler }
                 />
             </header>
 
