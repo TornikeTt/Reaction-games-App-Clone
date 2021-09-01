@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSpring, animated } from 'react-spring'
-import { useState } from "react"
+import { useState  } from "react"
 import WhatShowYou from "./WhatShowYou"
 
 const Exhibit = () => { 
@@ -42,7 +41,6 @@ const Exhibit = () => {
                     return "COMING SOON..."
             };
         }
-
     }
 
 
@@ -113,7 +111,6 @@ const Exhibit = () => {
                    setGameIdentification = { setGameIdentification }
                 />
             </div>
-
         </main>
     );
 }

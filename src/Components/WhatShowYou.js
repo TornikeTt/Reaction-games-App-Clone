@@ -5,8 +5,11 @@ import { gameList } from "./gameList";
 // games 
 import ColorChangeGame from "./ColorChangeGame"
 
-const WhatShowYou = (props) => { 
 
+import { useSpring, animated } from "react-spring";
+
+const WhatShowYou = (props) => { 
+    
     const { 
        settingToggle,
        difficultyValue,
@@ -14,19 +17,34 @@ const WhatShowYou = (props) => {
        GameIdentification,
        setGameIdentification,
     } = props
+    
+    // here we use React spring to have animation 
+    // animation heppend when react commpoennt change from Menu to Setting 
+    const Setting_animation = useSpring({ 
+        marginLeft: settingToggle ? 0 : 600
+    })
+
+    const Menu_animation = useSpring( { 
+        marginRight: settingToggle ? 600 : 0
+    })
+
 
     if( GameIdentification === 0 ) { 
         if(settingToggle) { 
             return ( 
+                <animated.div style={Setting_animation}>
                 <Settings 
+                    settingToggle = { settingToggle }
                     difficultyValue = { difficultyValue } 
                     setDifficultyValue = { setDifficultyValue }
                 /> 
+                </animated.div>
             ); 
         } else { 
             return ( 
                 gameList.map( (eachData) => { 
                     return ( 
+                        <animated.div style={Menu_animation}>
                         <Eachgame 
                             key ={ eachData.id }
                             gameName = { eachData.gameName }
@@ -35,6 +53,7 @@ const WhatShowYou = (props) => {
                             GameIdentification = { GameIdentification }
                             setGameIdentification = { setGameIdentification }
                         />
+                        </animated.div>
                     )
                 }) 
             )

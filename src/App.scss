@@ -34,3 +34,17 @@ $icons_width_height: 20px;
 }
 
 
+.number { 
+  @include flex( column , space-around , center);
+  p { 
+    font-size: 350px;
+  }
+
+  small { 
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+
