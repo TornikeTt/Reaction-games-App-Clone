@@ -7,10 +7,10 @@ function App() {
   const [ showNumber , setShowNumber ] = useState(true)
 
   const count = useSpring({
-    from: { number: 4},
-    to: { number: 0},
+    from: { number: 4 },
+    to: { number: 0 },
     config: { 
-      duration: 5000
+      duration: 2000
     },
     onRest: () => setShowNumber(!showNumber),
   })
@@ -21,15 +21,16 @@ function App() {
         showNumber ? 
           <div className="number"> 
             <animated.p>
-          { count.number.interpolate(val => Math.floor(val)) }
-              </animated.p>
+            { count.number.interpolate(val => Math.floor(val)) }
+            </animated.p>
             <small> This is <q>Reaction game</q> Clone </small>
           </div> 
         : 
-        <Exhibit /> 
+          <Exhibit /> 
       }
     </div>
   );
+
 }
 
 export default App;

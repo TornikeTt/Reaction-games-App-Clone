@@ -36,8 +36,10 @@ $icons_width_height: 20px;
 
 .number { 
   @include flex( column , space-around , center);
+
   p { 
     font-size: 350px;
+    text-shadow: 20px 20px 30px black;
   }
 
   small { 
