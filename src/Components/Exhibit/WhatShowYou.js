@@ -1,12 +1,13 @@
-import Menu from "./Menu"
-import Settings from "./Settings";
-import { gameList } from "./gameList";
+import Menu from "../Menu/Menu.js"
+import Settings from "../Settings/Settings";
+import { gameList } from "../gameList";
 import { useSpring, animated } from "react-spring";
 
 // games
-import ColorChangeGame from "./ColorChangeGame"
+import ColorChangeGame from "../ColorChangeGame"
 
 const WhatShowYou = (props) => {
+
   const {
     settingToggle,
     difficultyValue,

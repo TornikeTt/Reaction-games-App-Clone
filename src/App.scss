@@ -23,9 +23,9 @@ $icons_width_height: 20px;
     overflow: hidden;
 }
 
-@import "./_Exhibit.scss";
-@import "./_Menu.scss";
-@import "./_Settings.scss";
+@import "./Components/Exhibit/_Exhibit.scss";
+@import "./Components/Menu/_Menu.scss";
+@import "./Components/Settings/_Settings.scss";
 @import "./_ColorChangeGame.scss";
 
 .icone { 

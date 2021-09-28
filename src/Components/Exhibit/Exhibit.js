@@ -69,7 +69,7 @@ const Exhibit = () => {
   const right_icone_hendler = () => {
 
     if( GameIdentification > 0) {
-
+        // when we click any game 
         return ( 
             <img
                 src="icones/sync-alt-solid.svg"
@@ -77,9 +77,11 @@ const Exhibit = () => {
                 className="icone"
             />
         )
+
     } else {
         if( settingToggle === true && GameIdentification === 0) { 
             return ( 
+                // when we are inside Settings
                 <>
                 <a href="https://www.instagram.com/" target="_blank">
                     <img 
@@ -92,6 +94,7 @@ const Exhibit = () => {
             )
         } else { 
             return ( 
+                // when we are inside Menu
                 <img
                     src="icones/cog-solid.svg"
                     alt="settings icone"

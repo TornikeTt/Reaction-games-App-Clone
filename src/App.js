@@ -1,5 +1,5 @@
 import './App.scss';
-import Exhibit from "./Components/Exhibit";
+import Exhibit from "./Components/Exhibit/Exhibit";
 import React , { useState } from "react"
 import { useSpring, animated } from "react-spring"
 
