@@ -23,10 +23,10 @@ $icons_width_height: 20px;
     overflow: hidden;
 }
 
-@import "_Exhibit.scss";
-@import "_EachGame.scss";
-@import "_Settings.scss";
-@import "_ColorChangeGame.scss";
+@import "./_Exhibit.scss";
+@import "./_Menu.scss";
+@import "./_Settings.scss";
+@import "./_ColorChangeGame.scss";
 
 .icone { 
     width: $icons_width_height;

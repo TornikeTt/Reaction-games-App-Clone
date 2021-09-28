@@ -67,23 +67,38 @@ const Exhibit = () => {
   }
 
   const right_icone_hendler = () => {
-      
+
     if( GameIdentification > 0) {
-        return { 
-            click: "",
-            icone: "icones/sync-alt-solid.svg",
-        }
+
+        return ( 
+            <img
+                src="icones/sync-alt-solid.svg"
+                alt="settings icone"
+                className="icone"
+            />
+        )
     } else {
-        if( settingToggle === true && GameIdentification <= 0) { 
-            return { 
-                click: "document.location='facebook.com'",
-                icone: "icones/instagram-brands.svg",
-            }
+        if( settingToggle === true && GameIdentification === 0) { 
+            return ( 
+                <>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img 
+                        src="icones/instagram-brands.svg"
+                        alt="instagram icone" 
+                        className="icone" 
+                    />
+                </a>
+                </>
+            )
         } else { 
-            return { 
-                click: () => Setting_Hendler(),
-                icone: "icones/cog-solid.svg",
-            }
+            return ( 
+                <img
+                    src="icones/cog-solid.svg"
+                    alt="settings icone"
+                    className="icone"
+                    onClick = { Setting_Hendler }
+                />
+            )
         }
     }
       
@@ -115,14 +130,10 @@ const Exhibit = () => {
 
             { /*  here onClick string has string which
                 gave us error change another time  */ }
-            <a href={ right_icone_hendler().click } target="_blank">
-                <img
-                    src={ right_icone_hendler().icone }
-                    alt="settings icone"
-                    className="icone"
-                    onClick = { right_icone_hendler().click }
-                />
-            </a>
+
+            {  
+                right_icone_hendler()
+            }
         </header>
 
         <div className="shape">
