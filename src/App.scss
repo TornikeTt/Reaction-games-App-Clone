@@ -26,13 +26,12 @@ $icons_width_height: 20px;
 @import "./Components/Exhibit/_Exhibit.scss";
 @import "./Components/Menu/_Menu.scss";
 @import "./Components/Settings/_Settings.scss";
-@import "./_ColorChangeGame.scss";
+@import "./Components/Games/_Games.scss";
 
 .icone { 
     width: $icons_width_height;
     height: $icons_width_height;
 }
-
 
 .number { 
   @include flex( column , space-around , center);
@@ -47,6 +46,5 @@ $icons_width_height: 20px;
     font-weight: bold;
     font-size: 20px;
   }
+
 }
-
-

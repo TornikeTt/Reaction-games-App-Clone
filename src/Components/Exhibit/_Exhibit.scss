@@ -19,23 +19,24 @@ main {
         }
     }
 
+    // this class impact to WhatShowYou Component
     .shape { 
         width: 90%;
-        height: 90%;
+        // full height mines Header's Height 
+        height: calc( 100% - 50px ); 
         overflow: auto;
-        transition: all 1s;
         margin: 0px auto;
-        
+
         &::-webkit-scrollbar {
             width: 0;  
             background: transparent;  // make scrollbar invisible 
         }
-
     }
-
-
 }
 
 
-
-
+@media (max-width: 830px) {
+    main { 
+        width: 100%;
+    } 
+}

@@ -3,7 +3,7 @@ import {useState} from "react"
 import { useSpring, animated } from "react-spring"
 
 const ColorChangeGame = () => { 
-  const [ Starting_ColorChange , setStarting_ColorChange ] = useState(false)
+  const [ Starting_Games , setStarting_Games ] = useState(false)
   const [ ColorChange_Game_start , setColorChange_Game_start ] = useState(false)
 
   const ColorChange_count = useSpring({
@@ -15,7 +15,7 @@ const ColorChangeGame = () => {
      * after change Starting_ColorChange value to true, pause value change false
      * that means number animation is start 
     */
-    pause: Starting_ColorChange ? false : true, 
+    pause: Starting_Games ? false : true, 
     from: { number: 4 },
     to: { number: 0 },
     config: { 
@@ -28,7 +28,7 @@ const ColorChangeGame = () => {
 
   const startGame_ColorChange_Hendler = () => { 
 
-    if( Starting_ColorChange ) { 
+    if( Starting_Games ) { 
       // we been here after when user click start button
       // which means Starting_ColorChange hook become true
       if( ColorChange_Game_start ) { 
@@ -55,7 +55,7 @@ const ColorChangeGame = () => {
   
 
   return ( 
-      <div className="ColorChange_Game">
+      <div className="Games">
           <div className="HowToPlye">
               <p>click on the frame as soon as the color 
                   changes, as soon as possible </p>
@@ -63,7 +63,7 @@ const ColorChangeGame = () => {
 
           <div 
               className="start_game" 
-              onClick={() => setStarting_ColorChange(true)} >
+              onClick={() => setStarting_Games(true)} >
               { 
                 startGame_ColorChange_Hendler()
               }

@@ -11,7 +11,7 @@ const Menu = (props) => {
     }
     
     return ( 
-      <div className="Each_game" 
+      <div className="Menu" 
         onClick={ () =>  GameIdentification_Hendler(gameNumber) } > 
           <p className="game_Name">{ gameName } </p>
           <div className="summary_and_icons">

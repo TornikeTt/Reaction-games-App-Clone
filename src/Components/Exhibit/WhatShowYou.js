@@ -4,7 +4,7 @@ import { gameList } from "../gameList";
 import { useSpring, animated } from "react-spring";
 
 // games
-import ColorChangeGame from "../ColorChangeGame"
+import Games from "../Games/Games"
 
 const WhatShowYou = (props) => {
 
@@ -28,7 +28,6 @@ const WhatShowYou = (props) => {
 
 
   if( GameIdentification === 0 ) {
-
       if(settingToggle) {
           // when user inside Setting
           return (
@@ -57,17 +56,11 @@ const WhatShowYou = (props) => {
               })
           )
       }
-
-  }  else if ( GameIdentification === 1)  {
+  }  else   {
       return (
-          <ColorChangeGame />
+          <Games />
       );
-  } else{
-      return (
-          <div> COMIGN SOON.... { GameIdentification } </div>
-      );
-  }
-
+  } 
 }
 
 

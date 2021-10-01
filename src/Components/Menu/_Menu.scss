@@ -1,4 +1,4 @@
-.Each_game { 
+.Menu { 
     height: 100px;
     margin: 20px auto;
     border: 3px solid black;
@@ -21,15 +21,29 @@
         margin-left: 29px;
         margin-top: 15px;
 
-        p { 
-            width: 80%;
-            height: 30px;
-            overflow: auto;
-            text-transform: uppercase;
+        div { 
+            display: flex;
+
+            .summary { 
+                width: 80%;
+                height: 30px;
+                overflow: auto;
+                text-transform: uppercase;
+            }
+
+            img { 
+                margin-right: 15px;
+            }
         }
 
-        img { 
-            margin-right: 15px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .Menu { 
+        .summary_and_icons { 
+            margin-top: 5px;
         }
     }
 }

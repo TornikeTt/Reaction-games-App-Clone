@@ -12,6 +12,7 @@ const Exhibit = () => {
 
   const [ difficultyValue , setDifficultyValue ] = useState(5);
   const [ GameIdentification, setGameIdentification ] = useState(0)
+  const [ Theme , setTheme] = useState(true) // for chaneing Them 
 
   const Volume_Hendler = () => {
     setVolume(!volume)
@@ -148,6 +149,7 @@ const Exhibit = () => {
                setGameIdentification = { setGameIdentification }
             />
         </div>
+
     </main>
   );
 }
