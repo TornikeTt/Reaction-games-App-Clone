@@ -20,6 +20,7 @@ function App() {
       { 
         showNumber ? 
           <div className="number"> 
+
             <animated.p>
             { count.number.interpolate(val => Math.floor(val)) }
             </animated.p>

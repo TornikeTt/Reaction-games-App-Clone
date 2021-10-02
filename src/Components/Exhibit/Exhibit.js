@@ -50,7 +50,7 @@ const Exhibit = () => {
     }
   }
 
-  const left_icone_hendler = () => {
+ const left_icone_hendler = () => {
     if( GameIdentification > 0 || settingToggle === true) {
       // if we click any game or if we are inside Settings
       // show X icone left side of header tag
@@ -97,7 +97,7 @@ const Exhibit = () => {
             return ( 
                 // when we are inside Menu
                 <img
-                    src="icones/cog-solid.svg"
+                    src="icones/settings.svg"
                     alt="settings icone"
                     className="icone"
                     onClick = { Setting_Hendler }
