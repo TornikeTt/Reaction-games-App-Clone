@@ -1,5 +1,4 @@
-export let gameList = [ 
-
+export let gameListData = [ 
     {
         id: 1, 
         gameName: "1. COLOR CHANGE", 
@@ -41,8 +40,4 @@ export let gameList = [
         gameName: "7. math",
         summary: "solving simple equations from speed"
     }
-
-
 ]
-
-

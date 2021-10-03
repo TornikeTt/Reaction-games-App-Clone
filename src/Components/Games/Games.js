@@ -1,5 +1,6 @@
 import React from "react";
 import {useState} from "react"
+import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring"
 
 const ColorChangeGame = () => { 
@@ -27,7 +28,6 @@ const ColorChangeGame = () => {
   })
 
   const startGame_ColorChange_Hendler = () => { 
-
     if( Starting_Games ) { 
       // we been here after when user click start button
       // which means Starting_ColorChange hook become true
@@ -52,8 +52,6 @@ const ColorChangeGame = () => {
 
   }
 
-  
-
   return ( 
       <div className="Games">
           <div className="HowToPlye">
@@ -68,10 +66,8 @@ const ColorChangeGame = () => {
                 startGame_ColorChange_Hendler()
               }
           </div>
-
       </div>
   )
-  
 }
 
 
