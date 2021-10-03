@@ -3,7 +3,7 @@ import {useState} from "react"
 import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring"
 
-const ColorChangeGame = () => { 
+const ColorChangeGame = ({PageIdentification}) => { 
   const [ Starting_Games , setStarting_Games ] = useState(false)
   const [ ColorChange_Game_start , setColorChange_Game_start ] = useState(false)
 
@@ -51,12 +51,15 @@ const ColorChangeGame = () => {
     }
 
   }
+    
+    let play_Hendler = gameListData.filter((each) => each.id === PageIdentification)
 
   return ( 
       <div className="Games">
-          <div className="HowToPlye">
-              <p>click on the frame as soon as the color 
-                  changes, as soon as possible </p>
+          <div className="HowToPlay">
+              <p>  
+                  { play_Hendler[0].HowToPlay }
+              </p>
           </div>
 
           <div 

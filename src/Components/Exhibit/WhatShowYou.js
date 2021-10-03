@@ -58,7 +58,9 @@ const WhatShowYou = (props) => {
       }
   }  else   {
       return (
-          <Games />
+          <Games 
+              PageIdentification = { PageIdentification }
+          />
       );
   } 
 }
