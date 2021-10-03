@@ -3,16 +3,16 @@ const Menu = (props) => {
       gameName, 
       summary, 
       gameNumber,
-      setGameIdentification,
+      setPageIdentification,
     } = props
 
-    const GameIdentification_Hendler = (gameNumber) => { 
-      setGameIdentification(gameNumber)
+    const Page_Identification_Hendler = (gameNumber) => { 
+      setPageIdentification(gameNumber)
     }
     
     return ( 
       <div className="Menu" 
-        onClick={ () =>  GameIdentification_Hendler(gameNumber) } > 
+        onClick={ () =>  Page_Identification_Hendler(gameNumber) } > 
           <p className="game_Name">{ gameName } </p>
           <div className="summary_and_icons">
               <p className="summary"> { summary } </p>

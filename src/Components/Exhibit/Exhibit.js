@@ -11,7 +11,7 @@ const Exhibit = () => {
   const [ settingToggle, setSettingToggle ] = useState(false);
 
   const [ difficultyValue , setDifficultyValue ] = useState(5);
-  const [ GameIdentification, setGameIdentification ] = useState(0)
+  const [ PageIdentification, setPageIdentification ] = useState(0)
   const [ Theme , setTheme] = useState(true) // for chaneing Them 
 
   const Volume_Hendler = () => {
@@ -23,15 +23,15 @@ const Exhibit = () => {
   }
 
   const Header_Name_Hendler = () => {
-    if ( settingToggle === true && GameIdentification === 0) {
+    if ( settingToggle === true && PageIdentification === 0) {
       // when user is inside Settings
         return "SETTINGS"
-    } else if ( settingToggle === false && GameIdentification === 0 ) {
+    } else if ( settingToggle === false && PageIdentification === 0 ) {
       // when user is inside Menu
         return "MENU"
-    } else if ( GameIdentification > 0) {
+    } else if ( PageIdentification > 0) {
       // when user Click Any game
-      switch(GameIdentification) {
+      switch(PageIdentification) {
           case 1:
               return "COLOR CHANGE"
               break;
@@ -51,7 +51,7 @@ const Exhibit = () => {
   }
 
  const left_icone_hendler = () => {
-    if( GameIdentification > 0 || settingToggle === true) {
+    if( PageIdentification > 0 || settingToggle === true) {
       // if we click any game or if we are inside Settings
       // show X icone left side of header tag
       return "icones/times-solid.svg"
@@ -69,7 +69,7 @@ const Exhibit = () => {
 
   const right_icone_hendler = () => {
 
-    if( GameIdentification > 0) {
+    if( PageIdentification > 0) {
         // when we click any game 
         return ( 
             <img
@@ -80,7 +80,7 @@ const Exhibit = () => {
         )
 
     } else {
-        if( settingToggle === true && GameIdentification === 0) { 
+        if( settingToggle === true && PageIdentification === 0) { 
             return ( 
                 // when we are inside Settings
                 <>
@@ -110,7 +110,7 @@ const Exhibit = () => {
 
   const x = () => {
     // when we be in a game and click X icone it's go back to the menu
-    setGameIdentification(0)
+    setPageIdentification(0)
   }
 
   return (
@@ -123,14 +123,14 @@ const Exhibit = () => {
                 alt="Speakers icone"
                 className="icone"
                 onClick = {
-                    GameIdentification > 0 ? x :
+                    PageIdentification > 0 ? x :
                     settingToggle ? Setting_Hendler : Volume_Hendler
                 }
             />
 
             <p> { Header_Name_Hendler() } </p>
             { /* show only then when user click one of them games */ }
-            { GameIdentification > 0 && <p> 1  / {difficultyValue} </p> }
+            { PageIdentification > 0 && <p> 1  / {difficultyValue} </p> }
 
             { /*  here onClick string has string which
                 gave us error change another time  */ }
@@ -145,8 +145,8 @@ const Exhibit = () => {
                settingToggle = { settingToggle }
                difficultyValue = { difficultyValue }
                setDifficultyValue = { setDifficultyValue }
-               GameIdentification = { GameIdentification }
-               setGameIdentification = { setGameIdentification }
+               PageIdentification = { PageIdentification }
+               setPageIdentification = { setPageIdentification }
             />
         </div>
 

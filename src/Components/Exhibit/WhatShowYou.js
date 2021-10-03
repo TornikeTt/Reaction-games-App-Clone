@@ -1,6 +1,6 @@
 import Menu from "../Menu/Menu.js"
 import Settings from "../Settings/Settings";
-import { gameList } from "../gameList";
+import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring";
 
 // games
@@ -12,8 +12,8 @@ const WhatShowYou = (props) => {
     settingToggle,
     difficultyValue,
     setDifficultyValue,
-    GameIdentification,
-    setGameIdentification,
+    PageIdentification,
+    setPageIdentification,
   } = props
 
   // here we use React spring to have animation
@@ -27,7 +27,7 @@ const WhatShowYou = (props) => {
   })
 
 
-  if( GameIdentification === 0 ) {
+  if( PageIdentification === 0 ) {
       if(settingToggle) {
           // when user inside Setting
           return (
@@ -42,14 +42,14 @@ const WhatShowYou = (props) => {
       } else {
           return (
               // return inside Menu where we see games
-              gameList.map( (eachData) => {
+              gameListData.map( (eachData) => {
                 return (
                     <animated.div key={ eachData.id} style={Menu_animation}>
                       <Menu
                         gameName = { eachData.gameName }
                         summary = { eachData.summary }
                         gameNumber = { eachData.id }
-                        setGameIdentification = { setGameIdentification }
+                        setPageIdentification = { setPageIdentification }
                       />
                     </animated.div>
                 )
