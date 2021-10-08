@@ -54,15 +54,30 @@ const Exhibit = () => {
     if( PageIdentification > 0 || settingToggle === true) {
       // if we click any game or if we are inside Settings
       // show X icone left side of header tag
-      return "icones/times-solid.svg"
+      return Theme? 
+            // Here we test that user change Theme or not
+            // if change then we return same icone but different colors
+            "icones/times-solid.svg"
+            :
+            "ChnageThemeIcones/times-solid.svg"
     }
 
     if( settingToggle === false ) {
         //inside Menu
         if( volume ) {
-            return "icones/volume-up-solid.svg"
+            // Here we test that user change Theme or not
+            // if change then we return same icone but different colors
+            return  Theme? 
+                "icones/volume-up-solid.svg" 
+                : 
+                "ChnageThemeIcones/volume-up-solid.svg" 
         } else {
-            return  "icones/volume-mute-solid.svg"
+            // Here we test that user change Theme or not
+            // if change then we return same icone but different colors
+            return  Theme? 
+                "icones/volume-mute-solid.svg"
+                :
+                "ChnageThemeIcones/volume-mute-solid.svg"
         }
     }
   }
@@ -73,7 +88,11 @@ const Exhibit = () => {
         // when we click any game 
         return ( 
             <img
-                src="icones/sync-alt-solid.svg"
+                src= { Theme ? 
+                        "icones/sync-alt-solid.svg" 
+                        :
+                        "ChnageThemeIcones/sync-alt-solid.svg"
+                }
                 alt="settings icone"
                 className="icone"
             />
@@ -86,7 +105,11 @@ const Exhibit = () => {
                 <>
                 <a href="https://www.instagram.com/" target="_blank">
                     <img 
-                        src="icones/instagram-brands.svg"
+                        src= { Theme? 
+                                "icones/instagram-brands.svg"
+                                :
+                                "ChnageThemeIcones/instagram-brands.svg"
+                        }
                         alt="instagram icone" 
                         className="icone" 
                     />
@@ -97,7 +120,12 @@ const Exhibit = () => {
             return ( 
                 // when we are inside Menu
                 <img
-                    src="icones/settings.svg"
+                    src={ 
+                        Theme? 
+                            "icones/settings.svg"       
+                            :
+                            "ChnageThemeIcones/settings.svg"
+                    }
                     alt="settings icone"
                     className="icone"
                     onClick = { Setting_Hendler }
@@ -114,7 +142,7 @@ const Exhibit = () => {
   }
 
   return (
-    <main>
+      <main className={ Theme? "" : "BlackBackgroundColor" }>
         <header>
             <img
                 src = {
@@ -128,9 +156,13 @@ const Exhibit = () => {
                 }
             />
 
-            <p> { Header_Name_Hendler() } </p>
+            <p className={Theme? "" : "BlackThemeText"}> { Header_Name_Hendler() } </p>
             { /* show only then when user click one of them games */ }
-            { PageIdentification > 0 && <p> 1  / {difficultyValue} </p> }
+            { PageIdentification > 0 && 
+                <p className={Theme? "" : "BlackThemeText"}> 
+                    1  / {difficultyValue} 
+                </p> 
+            }
 
             { /*  here onClick string has string which
                 gave us error change another time  */ }
@@ -147,6 +179,8 @@ const Exhibit = () => {
                setDifficultyValue = { setDifficultyValue }
                PageIdentification = { PageIdentification }
                setPageIdentification = { setPageIdentification }
+               Theme = { Theme }
+               setTheme = { setTheme }
             />
         </div>
 

@@ -2,8 +2,6 @@ import Menu from "../Menu/Menu.js"
 import Settings from "../Settings/Settings";
 import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring";
-
-// games
 import Games from "../Games/Games"
 
 const WhatShowYou = (props) => {
@@ -14,6 +12,8 @@ const WhatShowYou = (props) => {
     setDifficultyValue,
     PageIdentification,
     setPageIdentification,
+    Theme,
+    setTheme,
   } = props
 
   // here we use React spring to have animation
@@ -36,6 +36,8 @@ const WhatShowYou = (props) => {
                   settingToggle = { settingToggle }
                   difficultyValue = { difficultyValue }
                   setDifficultyValue = { setDifficultyValue }
+                  Theme = { Theme }
+                  setTheme = { setTheme }
               />
               </animated.div>
           );
@@ -50,6 +52,7 @@ const WhatShowYou = (props) => {
                         summary = { eachData.summary }
                         gameNumber = { eachData.id }
                         setPageIdentification = { setPageIdentification }
+                        Theme = { Theme }
                       />
                     </animated.div>
                 )
@@ -60,6 +63,7 @@ const WhatShowYou = (props) => {
       return (
           <Games 
               PageIdentification = { PageIdentification }
+              Theme = { Theme }
           />
       );
   } 

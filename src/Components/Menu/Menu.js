@@ -4,6 +4,7 @@ const Menu = (props) => {
       summary, 
       gameNumber,
       setPageIdentification,
+      Theme,
     } = props
 
     const Page_Identification_Hendler = (gameNumber) => { 
@@ -11,19 +12,33 @@ const Menu = (props) => {
     }
     
     return ( 
-      <div className="Menu" 
-        onClick={ () =>  Page_Identification_Hendler(gameNumber) } > 
-          <p className="game_Name">{ gameName } </p>
+        <div 
+            className={`Menu ${Theme? "" : "blackThemeBorder"} `}
+            onClick={ () =>  Page_Identification_Hendler(gameNumber) } > 
+          <h1 className={`game_Name ${Theme? "":"BlackThemeText"}`}>
+            { gameName } 
+          </h1>
+
           <div className="summary_and_icons">
-              <p className="summary"> { summary } </p>
+              <p className={`summary ${Theme? "" : "BlackThemeText"}`}> { summary } </p>
+
               <div>
                   <img 
-                      src="/icones/question-solid.svg" 
+                      src= { 
+                          Theme? 
+                              "icones/question-solid.svg" 
+                              :
+                              "ChnageThemeIcones/question-solid.svg"
+                      }
                       alt="question icone"
                       className="icone"
                   />
-                  <img 
-                      src="icones/history-solid.svg" 
+                  <img  
+                      src= { Theme? 
+                              "icones/history-solid.svg" 
+                              :
+                              "ChnageThemeIcones/history-solid.svg"
+                      }
                       alt="history icone"
                       className="icone"
                   />

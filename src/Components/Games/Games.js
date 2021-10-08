@@ -3,7 +3,7 @@ import {useState} from "react"
 import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring"
 
-const ColorChangeGame = ({PageIdentification}) => { 
+const ColorChangeGame = ({PageIdentification , Theme }) => { 
   const [ Starting_Games , setStarting_Games ] = useState(false)
   const [ ColorChange_Game_start , setColorChange_Game_start ] = useState(false)
 
@@ -34,12 +34,12 @@ const ColorChangeGame = ({PageIdentification}) => {
       if( ColorChange_Game_start ) { 
         return ( 
           // here game is actually starting 
-          <div> game is starting </div>
+          <div className={Theme? "" : "BlackThemeText"}> game is starting </div>
         )
       } else { 
         // here we see number animation
         return ( 
-          <animated.p>
+          <animated.p className={Theme? "" : "BlackThemeText"} >
             { ColorChange_count.number.interpolate(val => Math.floor(val)) }
           </animated.p>
         )
@@ -47,7 +47,7 @@ const ColorChangeGame = ({PageIdentification}) => {
 
     } else { 
       // when Starting_ColorChange hook is false we see only "start"
-      return <p> start </p> 
+      return <p className={Theme? "" : "BlackThemeText"} > start </p> 
     }
 
   }
@@ -56,14 +56,14 @@ const ColorChangeGame = ({PageIdentification}) => {
 
   return ( 
       <div className="Games">
-          <div className="HowToPlay">
-              <p>  
+          <div className={`HowToPlay ${Theme? "" : "blackThemeBorder"}`}>
+              <p className={Theme? "" : "BlackThemeText"}>  
                   { play_Hendler[0].HowToPlay }
               </p>
           </div>
 
           <div 
-              className="start_game" 
+              className={`start_game ${Theme? "" : "blackThemeBorder"}`}
               onClick={() => setStarting_Games(true)} >
               { 
                 startGame_ColorChange_Hendler()
