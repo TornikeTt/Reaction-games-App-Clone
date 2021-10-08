@@ -2,7 +2,7 @@ import React from 'react';
 import { useState  } from "react"
 import WhatShowYou from "./WhatShowYou"
 
-const Exhibit = () => {
+const Exhibit = ({Theme , setTheme}) => {
   const [ volume, setVolume ] = useState(true);
   /*
     1. inside Menu "settingToggle" is false
@@ -12,7 +12,6 @@ const Exhibit = () => {
 
   const [ difficultyValue , setDifficultyValue ] = useState(5);
   const [ PageIdentification, setPageIdentification ] = useState(0)
-  const [ Theme , setTheme] = useState(true) // for chaneing Them 
 
   const Volume_Hendler = () => {
     setVolume(!volume)
