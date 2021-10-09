@@ -23,7 +23,7 @@ function App() {
         showNumber ? 
           <div className="number"> 
             <animated.p>
-            { count.number.interpolate(val => Math.floor(val)) }
+            { count.number.to(val => Math.floor(val)) }
             </animated.p>
             <small> This is <q>Reaction game</q> Clone </small>
           </div> 

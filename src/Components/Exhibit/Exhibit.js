@@ -102,7 +102,10 @@ const Exhibit = ({Theme , setTheme}) => {
             return ( 
                 // when we are inside Settings
                 <>
-                <a href="https://www.instagram.com/" target="_blank">
+                <a 
+                    href="https://www.instagram.com/" 
+                    target="_blank" 
+                    rel="noreferrer">
                     <img 
                         src= { Theme? 
                                 "icones/instagram-brands.svg"

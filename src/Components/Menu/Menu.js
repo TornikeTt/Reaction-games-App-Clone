@@ -20,8 +20,9 @@ const Menu = (props) => {
           </h1>
 
           <div className="summary_and_icons">
-              <p className={`summary ${Theme? "" : "BlackThemeText"}`}> { summary } </p>
-
+              <p className={`summary ${Theme? "" : "BlackThemeText"}`}> 
+                  { summary } 
+              </p>
               <div>
                   <img 
                       src= { 

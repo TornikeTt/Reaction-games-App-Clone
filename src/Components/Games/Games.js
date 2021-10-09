@@ -40,7 +40,7 @@ const ColorChangeGame = ({PageIdentification , Theme }) => {
         // here we see number animation
         return ( 
           <animated.p className={Theme? "" : "BlackThemeText"} >
-            { ColorChange_count.number.interpolate(val => Math.floor(val)) }
+            { ColorChange_count.number.to(val => Math.floor(val)) }
           </animated.p>
         )
       }
