@@ -1,6 +1,7 @@
 main { 
-    transition: all 0.9s;
     width: $main_width;
+    height: 100vh;
+    transition: all 0.9s;
     background-color: rgb(220,220,220);
 
     header { 
@@ -24,7 +25,7 @@ main {
     .shape { 
         width: 90%;
         // full height mines Header's Height 
-        height: calc( 100% - 50px ); 
+        height: calc(100% - 55px);
         overflow: auto;
         margin: 0px auto;
 

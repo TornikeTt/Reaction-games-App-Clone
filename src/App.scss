@@ -31,6 +31,7 @@ $icons_width_height: 25px;
 @import "./Components/Menu/_Menu.scss";
 @import "./Components/Settings/_Settings.scss";
 @import "./Components/Games/_Games.scss";
+@import "./Components/Games/ColorChange/_ColorChange.scss";
 
 .icone { 
     width: $icons_width_height;
@@ -53,7 +54,6 @@ $icons_width_height: 25px;
 }
 
 // when user change Theme 
-
 .BlackBackgroundColor { 
    background-color: black; 
 }
