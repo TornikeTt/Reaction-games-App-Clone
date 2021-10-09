@@ -3,75 +3,84 @@ import {useState} from "react"
 import { gameListData } from "../gameListData"
 import { useSpring, animated } from "react-spring"
 
-const ColorChangeGame = ({PageIdentification , Theme }) => { 
-  const [ Starting_Games , setStarting_Games ] = useState(false)
-  const [ ColorChange_Game_start , setColorChange_Game_start ] = useState(false)
-
-  const ColorChange_count = useSpring({
-    /*
-     * so pause keyword we use to control when starting number animation
-     * when Starting_ColorChange hook is false that means we see "start" 
-     * on the screen so pausa value is true that means animation in paused 
-     *
-     * after change Starting_ColorChange value to true, pause value change false
-     * that means number animation is start 
+const Games = ({PageIdentification , Theme }) => { 
+    /* 
+     * The "start" hook we use when user first see START text and click it 
+     * before user click start text The "start" hook is false 
+     * after user click start text then "start" hook is True 
+     * when "start" hook is true then we check "animationStart" hook
     */
-    pause: Starting_Games ? false : true, 
-    from: { number: 4 },
-    to: { number: 0 },
-    config: { 
-      duration: 2000
-    },
-    onRest: () => setColorChange_Game_start(true) 
-    // onRest change setColorChange_Game_start true and 
-    // starting actually game 
-  })
+    const [ start , setStart ] = useState(false)
+    /* 
+     * The "animationStart" hook we use after user click START text
+     * after animation is finish "animationStart"  hook will become false 
+     * when "animationStart" is false that means number animations is end...
+     * when animation is end then Games is start
+    */
+    const [ animationStart , setAnimationStart ] = useState(true)
 
-  const startGame_ColorChange_Hendler = () => { 
-    if( Starting_Games ) { 
-      // we been here after when user click start button
-      // which means Starting_ColorChange hook become true
-      if( ColorChange_Game_start ) { 
-        return ( 
-          // here game is actually starting 
-          <div className={Theme? "" : "BlackThemeText"}> game is starting </div>
-        )
-      } else { 
-        // here we see number animation
-        return ( 
-          <animated.p className={Theme? "" : "BlackThemeText"} >
-            { ColorChange_count.number.to(val => Math.floor(val)) }
-          </animated.p>
-        )
-      }
+    const Games_count = useSpring({
+        /* 
+            how puse work
+                1. when "start" hook is false pause return true 
+                which means animation didn't start
+                2. after "start"  hook will become true then pause return 
+                false which means The number animation is start
+        */
+        pause: start ? false : true, 
+        from: { number: 4 },
+        to: { number: 0 },
+        config: { 
+        duration: 2000
+        },
+        /* after when animation is end then onRest change "animationStart" hook's
+        states from true to false. after that game is start */
+        onRest: () => setAnimationStart(false) 
+    })
 
-    } else { 
-      // when Starting_ColorChange hook is false we see only "start"
-      return <p className={Theme? "" : "BlackThemeText"} > start </p> 
+    const Starting_Game_Hendler = () => { 
+        if( start ) { 
+            // we are here after user click START text
+            if( animationStart ) { 
+                // here we see number animation
+                return ( 
+                    <animated.p className={Theme? "" : "BlackThemeText"} >
+                    { Games_count.number.to(val => Math.floor(val)) }
+                    </animated.p>
+                )
+            } else { 
+                // here game is actually starting 
+                return ( 
+                    <div className={Theme? "" : "BlackThemeText"}> 
+                        game is starting 
+                    </div>
+                )
+            }
+        } else { 
+            // we are here before user click START text
+            return <p className={Theme? "" : "BlackThemeText"} > start </p> 
+        }
     }
 
-  }
-    
+    // play_Hendler function we use to identify each games name
     let play_Hendler = gameListData.filter((each) => each.id === PageIdentification)
 
-  return ( 
-      <div className="Games">
-          <div className={`HowToPlay ${Theme? "" : "blackThemeBorder"}`}>
-              <p className={Theme? "" : "BlackThemeText"}>  
-                  { play_Hendler[0].HowToPlay }
-              </p>
-          </div>
+    return ( 
+        <div className="Games">
+            <div className={`HowToPlay ${Theme? "" : "blackThemeBorder"}`}>
+                <p className={Theme? "" : "BlackThemeText"}>  
+                    { play_Hendler[0].HowToPlay }
+                </p>
+            </div>
 
-          <div 
-              className={`start_game ${Theme? "" : "blackThemeBorder"}`}
-              onClick={() => setStarting_Games(true)} >
-              { 
-                startGame_ColorChange_Hendler()
-              }
-          </div>
-      </div>
-  )
+            <div 
+                className={`start_game ${Theme? "" : "blackThemeBorder"}`}
+                onClick={() => setStart(true)} >
+                    { Starting_Game_Hendler() }
+            </div>
+        </div>
+    )
 }
 
 
-export default ColorChangeGame
+export default Games
