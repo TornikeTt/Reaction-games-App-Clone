@@ -14,6 +14,8 @@ const WhatShowYou = (props) => {
     setPageIdentification,
     Theme,
     setTheme,
+    eachLevel,
+    setEachLevel
   } = props
 
   // here we use React spring to have animation
@@ -64,6 +66,8 @@ const WhatShowYou = (props) => {
           <Games 
               PageIdentification = { PageIdentification }
               Theme = { Theme }
+              eachLevel = { eachLevel }
+              setEachLevel = { setEachLevel }
           />
       );
   } 

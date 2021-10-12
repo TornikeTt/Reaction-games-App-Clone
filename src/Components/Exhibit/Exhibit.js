@@ -11,6 +11,8 @@ const Exhibit = ({Theme , setTheme}) => {
   const [ settingToggle, setSettingToggle ] = useState(false);
 
   const [ difficultyValue , setDifficultyValue ] = useState(5);
+  const [ eachLevel , setEachLevel ] = useState(0)
+
   const [ PageIdentification, setPageIdentification ] = useState(0)
 
   const Volume_Hendler = () => {
@@ -140,7 +142,8 @@ const Exhibit = ({Theme , setTheme}) => {
 
   const x = () => {
     // when we be in a game and click X icone it's go back to the menu
-    setPageIdentification(0)
+    setPageIdentification(0);
+    setEachLevel(0);
   }
 
   return (
@@ -162,7 +165,7 @@ const Exhibit = ({Theme , setTheme}) => {
             { /* show only then when user click one of them games */ }
             { PageIdentification > 0 && 
                 <p className={Theme? "" : "BlackThemeText"}> 
-                    1  / {difficultyValue} 
+                    {eachLevel} / {difficultyValue} 
                 </p> 
             }
 
@@ -183,6 +186,8 @@ const Exhibit = ({Theme , setTheme}) => {
                setPageIdentification = { setPageIdentification }
                Theme = { Theme }
                setTheme = { setTheme }
+               eachLevel = { eachLevel }
+               setEachLevel = { setEachLevel }
             />
         </div>
 
