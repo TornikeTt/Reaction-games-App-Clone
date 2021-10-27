@@ -3,6 +3,10 @@ const Settings = (props) => {
 
     return ( 
         <>
+            {/*
+                Here we test that user change Theme or not
+                if change then we return same icone but different svg colors
+            */}
             <div className={`Share_App ${Theme? "" : "blackThemeBorder"}`}> 
                 <h1 className={Theme ? "" : "BlackThemeText"}> SHARE APP </h1>
                 <p className={Theme ? "" : "BlackThemeText"}> WiTH YOUR FRIENDS </p>
@@ -11,6 +15,7 @@ const Settings = (props) => {
             <div className={`Change_Theam ${Theme? "" : "blackThemeBorder"}`}> 
                 <h1 
                     className={Theme ? "" : "BlackThemeText"}
+                    // this onClick change Theme state
                     onClick={ () => setTheme(!Theme)}> 
                     CHANGE THEME 
                 </h1>
