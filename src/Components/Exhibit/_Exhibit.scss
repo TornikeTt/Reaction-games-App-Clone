@@ -2,7 +2,6 @@ main {
     width: $main_width;
     height: 100vh;
     transition: all 0.9s;
-    background-color: rgb(220,220,220);
 
     header { 
         width: 90%;
@@ -38,7 +37,6 @@ main {
 
 @media (max-width: 830px) {
     main { 
-        background-color: #FBFAF5;
         width: 100%;
     } 
 }
