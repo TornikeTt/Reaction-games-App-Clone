@@ -1,64 +1,68 @@
 import React from "react";
 import {useState} from "react"
 import { gameListData } from "../gameListData"
-import { useSpring, animated } from "react-spring"
 
-const Games = ({PageIdentification , Theme }) => { 
+// each games 
+import ColorChange from "./ColorChange/ColorChange"
+
+const Games = (props) => { 
+    const { 
+        PageIdentification,
+        Theme,
+        eachLevel,
+        setEachLevel,
+        difficultyValue,
+        setPageIdentification,
+        timeTrack,
+        setTimeTrack,
+    } = props
+
     /* 
-     * The "start" hook we use when user first see START text and click it 
-     * before user click start text The "start" hook is false 
-     * after user click start text then "start" hook is True 
-     * when "start" hook is true then we check "animationStart" hook
+        The "start" hook we use when user first see START text and click it 
+        before user click start text The "start" hook is false 
+        after user click start text then "start" hook is True 
     */
     const [ start , setStart ] = useState(false)
-    /* 
-     * The "animationStart" hook we use after user click START text
-     * after animation is finish "animationStart"  hook will become false 
-     * when "animationStart" is false that means number animations is end...
-     * when animation is end then Games is start
-    */
-    const [ animationStart , setAnimationStart ] = useState(true)
-
-    const Games_count = useSpring({
-        /* 
-            how puse work
-                1. when "start" hook is false pause return true 
-                which means animation didn't start
-                2. after "start"  hook will become true then pause return 
-                false which means The number animation is start
-        */
-        pause: start ? false : true, 
-        from: { number: 4 },
-        to: { number: 0 },
-        config: { 
-        duration: 2000
-        },
-        /* after when animation is end then onRest change "animationStart" hook's
-        states from true to false. after that game is start */
-        onRest: () => setAnimationStart(false) 
-    })
 
     const Starting_Game_Hendler = () => { 
         if( start ) { 
             // we are here after user click START text
-            if( animationStart ) { 
-                // here we see number animation
-                return ( 
-                    <animated.p className={Theme? "" : "BlackThemeText"} >
-                    { Games_count.number.to(val => Math.floor(val)) }
-                    </animated.p>
-                )
-            } else { 
-                // here game is actually starting 
-                return ( 
-                    <div className={Theme? "" : "BlackThemeText"}> 
-                        game is starting 
-                    </div>
-                )
-            }
+            let games = () => { 
+                switch(PageIdentification) { 
+                    case 1:
+                        return ( 
+                            <ColorChange 
+                                eachLevel = {eachLevel}
+                                setEachLevel = {setEachLevel}
+                                Theme = { Theme }
+                                difficultyValue = {difficultyValue}
+                                setPageIdentification = {setPageIdentification}
+                                timeTrack = {timeTrack}
+                                setTimeTrack = {setTimeTrack}
+                            />
+                        )
+                        break; 
+                    default: 
+                        return ( 
+                            <p className={
+                                `startGame_P ${Theme? "" : "BlackThemeText"}`}> 
+                                comming soon...
+                            </p>
+                        )
+                }
+            };
+            return ( 
+                <> {games()} </>
+            );
         } else { 
             // we are here before user click START text
-            return <p className={Theme? "" : "BlackThemeText"} > start </p> 
+            return ( 
+                <p 
+                    className={
+                        `startGame_P ${Theme? "" : "BlackThemeText"}`} > 
+                    start 
+                </p> 
+            )
         }
     }
 
@@ -75,6 +79,7 @@ const Games = ({PageIdentification , Theme }) => {
 
             <div 
                 className={`start_game ${Theme? "" : "blackThemeBorder"}`}
+                // when click start text change setStart state to true
                 onClick={() => setStart(true)} >
                     { Starting_Game_Hendler() }
             </div>
