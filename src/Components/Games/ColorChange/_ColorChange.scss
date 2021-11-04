@@ -1,0 +1,35 @@
+.ColorChange { 
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include flex(row , center , center);
+
+    .ColorChange_Number_Animation { 
+        font-weight: bold;
+        font-size: 300px;
+        text-transform: uppercase;
+        transition: all 0.2s;
+    }
+}
+
+.penalty { 
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    @include flex(row , space-between, center);
+    width: 100%;
+    height: 40px;
+    transition: all 0.2s;
+
+    p { 
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+.non_penalty { 
+    display: none;
+}
