@@ -1,0 +1,74 @@
+.EndGame { 
+    width: $main_width; //$main_width variable taken from app.scss
+    height: 100%;
+    @include flex(column , space-between , center);
+    transition: all 0.9s;
+}
+
+
+header { 
+    margin-top: 10px;
+    h1 { 
+        font-family: HelveticaNeueCyr;
+    }
+}
+
+section { 
+    @include flex(column , space-evenly, center);
+    border: 3px solid black;
+    width: 85%;
+    height: 28%;
+    transition: all 0.9s;
+
+    p { 
+        &:nth-child(1)  { 
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+
+        &:nth-child(2) { 
+            font-size: 33px;
+            font-weight: bold;
+        }
+
+        &:nth-child(3) { 
+            font-size: 22px;
+            width: 90%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+}
+
+footer { 
+    width: 100%;
+    margin-bottom: 50px;
+    @include flex(column, none , center);
+
+    button {
+        margin-top: 10px;
+        transition: all 0.9s;
+        border: 3px solid black;
+        cursor: pointer;
+        width: 85%;
+        height: 50px;
+
+        h1 { 
+            font-size: 30px;
+            font-family: HelveticaNeueCyr;
+        }
+
+        &:hover { 
+            border-width: 1px;
+        }
+    }
+}
+
+
+
+@media (max-width: 830px) {
+    .EndGame { 
+        width: 100%;
+    } 
+}
+
