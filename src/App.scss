@@ -40,16 +40,16 @@ $icons_width_height: 25px;
 }
 
 .number { 
-  @include flex( column , space-around , center);
+  @include flex( column , center,  center);
 
   p { 
-    font-size: 350px;
-    text-shadow: 20px 20px 30px black;
+    font-family: HelveticaNeueCyr;
+    font-size: 200px;
   }
 
   small { 
-    color: white;
-    font-weight: bold;
+    font-family: HelveticaNeueCyr;
+    color: grey;
     font-size: 20px;
   }
 }
