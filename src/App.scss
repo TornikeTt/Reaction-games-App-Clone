@@ -44,7 +44,7 @@ $icons_width_height: 25px;
 
   p { 
     font-family: HelveticaNeueCyr;
-    font-size: 200px;
+    font-size: 350px;
   }
 
   small { 
@@ -53,6 +53,16 @@ $icons_width_height: 25px;
     font-size: 20px;
   }
 }
+
+@media (max-width: 830px) {
+    .number { 
+      p { 
+        font-family: HelveticaNeueCyr;
+        font-size: 200px;
+      }
+    }
+}
+
 
 // when user change Theme 
 .BlackBackgroundColor { 
@@ -71,4 +81,5 @@ $icons_width_height: 25px;
 .BlackThemeText { 
     color: #FBFAF5;    
 }
+
 
