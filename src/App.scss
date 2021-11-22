@@ -54,6 +54,8 @@ $icons_width_height: 25px;
   }
 }
 
+
+
 @media (max-width: 830px) {
     .number { 
       p { 
@@ -62,7 +64,10 @@ $icons_width_height: 25px;
       }
     }
 }
-
+// when user CLICK START on the game
+.SHADOWEFFECT { 
+    background-color: #989898;
+}
 
 // when user change Theme 
 .BlackBackgroundColor { 
