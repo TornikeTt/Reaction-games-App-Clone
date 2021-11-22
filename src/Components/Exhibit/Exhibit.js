@@ -3,7 +3,7 @@ import { useState  } from "react"
 import WhatShowYou from "./WhatShowYou"
 import EndGame from "../EndGame/EndGame"
 
-const Exhibit = ({Theme , setTheme}) => {
+const Exhibit = ({Theme , setTheme, animation_SHADOW, setAnimation_SHADOW}) => {
     const [ volume, setVolume ] = useState(true);
     /*
         "settingToggle" we use to toggle between Menu and Setting components
@@ -59,7 +59,6 @@ const Exhibit = ({Theme , setTheme}) => {
         // here we change state and then we toggole between Menu and setting
         setSettingToggle(!settingToggle);
     }
-
 
     const Header_Name_Hendler = () => {
         if ( settingToggle === true && PageIdentification === 0) {
@@ -253,7 +252,7 @@ const Exhibit = ({Theme , setTheme}) => {
     } 
 
     return (
-        <main className={ Theme? "" : "BlackBackgroundColor" }>
+        <main className={ Theme? "" : "BlackBackgroundColor" } >
             <header>
                 <img
                     src = {
@@ -309,17 +308,19 @@ const Exhibit = ({Theme , setTheme}) => {
 
             <div className="shape">
                 <WhatShowYou
-                   settingToggle = { settingToggle }
-                   difficultyValue = { difficultyValue }
-                   setDifficultyValue = { setDifficultyValue }
-                   PageIdentification = { PageIdentification }
-                   setPageIdentification = { setPageIdentification }
-                   Theme = { Theme }
-                   setTheme = { setTheme }
-                   eachLevel = { eachLevel }
-                   setEachLevel = { setEachLevel }
-                   timeTrack = {timeTrack}
-                   setTimeTrack = { setTimeTrack }
+                    settingToggle = { settingToggle }
+                    difficultyValue = { difficultyValue }
+                    setDifficultyValue = { setDifficultyValue }
+                    PageIdentification = { PageIdentification }
+                    setPageIdentification = { setPageIdentification }
+                    Theme = { Theme }
+                    setTheme = { setTheme }
+                    eachLevel = { eachLevel }
+                    setEachLevel = { setEachLevel }
+                    timeTrack = { timeTrack }
+                    setTimeTrack = { setTimeTrack }
+                    animation_SHADOW = {animation_SHADOW}
+                    setAnimation_SHADOW = {setAnimation_SHADOW}
                 />
             </div>
         </main>
