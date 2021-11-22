@@ -17,6 +17,8 @@ const WhatShowYou = (props) => {
         setEachLevel,
         timeTrack,
         setTimeTrack,
+        animation_SHADOW,
+        setAnimation_SHADOW,
     } = props
 
     /*
@@ -70,14 +72,16 @@ const WhatShowYou = (props) => {
         // we are inside in one of the games 
         return (
               <Games 
-                PageIdentification = { PageIdentification }
-                Theme = { Theme }
-                eachLevel = { eachLevel }
-                setEachLevel = { setEachLevel }
-                difficultyValue = { difficultyValue }
-                setPageIdentification = { setPageIdentification }
-                timeTrack = { timeTrack }
-                setTimeTrack = { setTimeTrack }
+                    PageIdentification = { PageIdentification }
+                    Theme = { Theme }
+                    eachLevel = { eachLevel }
+                    setEachLevel = { setEachLevel }
+                    difficultyValue = { difficultyValue }
+                    setPageIdentification = { setPageIdentification }
+                    timeTrack = { timeTrack }
+                    setTimeTrack = { setTimeTrack }
+                    animation_SHADOW = {animation_SHADOW}
+                    setAnimation_SHADOW = {setAnimation_SHADOW}
               />
         );
     } 
