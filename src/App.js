@@ -29,8 +29,24 @@ function App() {
         onRest: () => setShowNumber(!showNumber),
     })
 
+
+    /*
+        when we click START inside game we would see animation 3,2,1
+        so every time when wee see this animation we need to have shadow.
+
+        so state looks like
+            1. animation_SHADOW = false , we cant see shadows
+            2. animation_SHADOW = true - we see shadow
+    */
+
+    const [animation_SHADOW , setAnimation_SHADOW] = useState(false);
+
     return (
-        <div className={`App ${Theme ? "" : "BlackBackgroundColor"}`}>
+        <div 
+            className={`App 
+                ${Theme ? "" : "BlackBackgroundColor"} 
+                ${animation_SHADOW? "SHADOWEFFECT" : ""}
+            `}>
             { 
             showNumber ? 
             <div className="number"> 
@@ -40,7 +56,12 @@ function App() {
                 <small> This is <q>Reaction game</q> Clone </small>
             </div> 
             : 
-            <Exhibit Theme = {Theme} setTheme={setTheme}/> 
+            <Exhibit 
+                Theme = {Theme} 
+                setTheme={setTheme}
+                animation_SHADOW = {animation_SHADOW}
+                setAnimation_SHADOW = { setAnimation_SHADOW }
+            /> 
             }
         </div>
     );
