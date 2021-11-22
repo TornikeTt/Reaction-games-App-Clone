@@ -15,6 +15,8 @@ const Games = (props) => {
         setPageIdentification,
         timeTrack,
         setTimeTrack,
+        animation_SHADOW,
+        setAnimation_SHADOW,
     } = props
 
     /* 
@@ -39,6 +41,8 @@ const Games = (props) => {
                                 setPageIdentification = {setPageIdentification}
                                 timeTrack = {timeTrack}
                                 setTimeTrack = {setTimeTrack}
+                                animation_SHADOW = {animation_SHADOW}
+                                setAnimation_SHADOW = {setAnimation_SHADOW}
                             />
                         )
                         break; 
@@ -51,6 +55,7 @@ const Games = (props) => {
                         )
                 }
             };
+
             return ( 
                 <> {games()} </>
             );
